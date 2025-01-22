@@ -296,5 +296,54 @@ h2 {
     }
 }
 
+.newsletter {
+    position: relative;
+    margin: 16px;
+    padding: 32px 24px;
+    border-radius: 20px;
+    background-color: var(--font-dark);
+    h2 {
+        color: var(--background-main);
+        margin-bottom: 32px;
+    }
+    button, input {
+        font-family: "Satoshi-Regular", var(--system-font-stack);
+        font-size: 14px;
+        width: 100%;
+        border-radius: 62px;
+        border: 0;
+    }
+    input {
+        margin-bottom: 12px;
+        padding: 12px 12px 12px 40px;
+        box-sizing: border-box;
+        background-image: url(../assets/images/icons/mail.svg);
+        background-position: left 10px top 50%;
+        background-repeat: no-repeat;
+    }
+    button {
+        background-color: var(--background-main);
+        color: var(--font-dark);
+        padding: 12px 16px;
+    }
+
+}
+
+.footer-background {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: -16px;
+    width: 100vw;
+    height: 50%;
+    background-color: var(--background-secondary);
+}
+
 
 /* FOOTER */
+
+footer {
+    background-color: var(--background-secondary);
+}
+
+
