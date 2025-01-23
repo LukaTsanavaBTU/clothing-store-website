@@ -342,7 +342,7 @@ h2 {
     z-index: -1;
     top: 50%;
     left: -16px;
-    width: 100vw;
+    width: calc(100% + 16px*2);
     height: 100%;
     background-color: var(--background-secondary);
 }
@@ -503,9 +503,7 @@ footer {
     }
 
     .hero {
-        width: 100vw;
-        height: 700px;
-        box-sizing: border-box;
+        height: 70vh;
         display: flex;
         gap: 20px;
         align-items: center;
