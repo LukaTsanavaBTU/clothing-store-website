@@ -13,6 +13,7 @@
 /* HEADER */
 
 .signup-prompt {
+    position: relative;
     color: var(--background-main);
     background-color: var(--font-dark);
     font-family: "Satoshi-Regular", var(--system-font-stack);
@@ -23,6 +24,9 @@
         color: var(--background-main);
         text-decoration-color: var(--background-main);
     }
+    button {
+        display: none;
+    };
 }
 
 nav {
@@ -40,6 +44,9 @@ nav {
     } 
     img {
         width: 25px;
+    }
+    ul {
+        display: none;
     }
 }
 
@@ -81,6 +88,7 @@ nav {
     text-align: center;
     span:first-of-type {
         font-size: 24px;
+        font-family: "Satoshi-Bold", var(--system-font-stack);
     }
     span:last-of-type {
         font-size: 12px;
@@ -420,3 +428,153 @@ footer {
 
 }
 
+@media screen and (min-width: 1000px) {
+    /* HEADER */
+    .signup-prompt {
+        button {
+            background-color: transparent;
+            border: none;
+            position: absolute;
+            display: block;
+            right: 100px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            width: 20px;
+        }
+        img {
+            width: 100%;
+        }
+    }
+
+    nav {
+        padding: 24px 100px;
+        gap: 40px;
+        h1 {
+            font-size: 32px;
+        }
+        &>button:last-child {
+            display: none;
+        }
+        ul {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            font-size: 16px;
+            font-family: "Satoshi-Regular", var(--system-font-stack);
+        }
+        li:first-child img {
+            height: 8px;
+        }
+        li:last-child img {
+            width: 24px;
+            margin-right: 14px;
+        }
+        a {
+            text-decoration: none;
+            color: var(--font-dark);
+        }
+    }
+
+    .search {
+        flex: 1;
+        position: relative;
+        input {
+            width: 100%;
+            padding: 12px 12px 12px 52px;
+            background-color: var(--background-secondary);
+            border: none;
+            border-radius: 62px;
+            font-size: 16px;
+            font-family: "Satoshi-Regular", var(--system-font-stack);
+        }
+        input:focus {
+            outline: 2px solid var(--font-lighter);
+        }
+        button {
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+        }
+    }
+
+    .hero {
+        width: 100vw;
+        height: 700px;
+        box-sizing: border-box;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        padding-left: 100px;
+    }
+
+    .hero-info {
+        flex: 1;
+        align-items: flex-start;
+        gap: 30px;
+        padding: 20px 0;
+        h2 {
+            font-size: 64px;
+            font-family: "Alfa Slab One", var(--system-font-stack);
+        }
+        p {
+            font-size: 16px;
+        }
+        button {
+            width: 33%;
+        }
+    }
+
+    .stats {
+        margin-top: 18px;
+        grid-template-columns: repeat(3, 1fr);
+        li {
+            padding: 0 32px;
+        }
+        li:first-child {
+            padding-left: 0;
+        }
+        li:nth-child(2) {
+            border-right: 1px solid #00000020;
+        }
+        li:last-child {
+            padding-right: 0;
+            grid-column: auto;
+        }
+        span:first-of-type {
+            font-size: 40px;
+        }
+        span:last-of-type {
+            font-size: 16px;
+        }
+    }
+
+    .hero-img {
+        flex: 1;
+        height: 100%;
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .brand-logos {
+        height: 120px;
+        padding: 0 20px;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        a {
+            height: 32px;
+        }
+        a:first-child, a:last-child {
+            align-self: start;
+        }
+    }
+
+    /* MAIN */
+}

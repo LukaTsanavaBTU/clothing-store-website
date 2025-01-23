@@ -15,11 +15,26 @@
 </head>
 <body>
     <div class="signup-prompt">
-        Sign up and get 20% off to your first order. <a href="#">Sign Up Now</a> 
+        Sign up and get 20% off to your first order. <a href="#">Sign Up Now</a>
+        <button><img src="./assets/images/icons/close.svg" alt="close prompt"></button>
     </div>
     <header>
         <nav>
             <h1>SHOP.CO</h1>
+            <ul>
+                <li><a href="#">Shop <img src="./assets/images/icons/chevron-down.svg" alt=""></a></li>
+                <li><a href="#">On Sale</a></li>
+                <li><a href="#">New Arrivals</a></li> <!-- add link to new arrivals section -->
+                <li><a href="#">Brands</a></li>
+                <li class="search">
+                    <input type="search" name="search" id="search" placeholder="Search for products...">
+                    <button><img src="./assets/images/icons/search.svg" alt="search"></button>
+                </li>
+                <li>
+                    <a href="#"><img src="./assets/images/icons/shopping-cart.svg" alt="shopping card"></a>
+                    <a href="#"><img src="./assets/images/icons/user.svg" alt="user"></a>
+                </li>
+            </ul>
             <button><img src="./assets/images/icons/hamburger-menu.svg" alt="open menu"></button>
         </nav>
         <section class="hero">
@@ -39,9 +54,10 @@
                     </li>
                 </ul>
             </div>
-            <div class="hero-img">
+            <picture class="hero-img">
+                <source media="(min-width:1000px)" srcset="./assets/images/hero-desktop.png">
                 <img src="./assets/images/hero-mobile.png" alt="a man and a woman wearing fashionable clothes">
-            </div>
+            </picture>
         </section>
         <section class="brand-logos">
             <a href="#"><img src="./assets/images/brand_logos/versace-logo.png" alt="versace"></a>
