@@ -228,8 +228,6 @@ h2 {
 }
 
 .styles {
-    display: grid;
-    gap: 16px;
     background-color: var(--background-secondary);
     border-radius: 20px;
     padding: 40px 24px;
@@ -237,10 +235,16 @@ h2 {
         text-align: center;
         margin-bottom: 32px;
     }
+    ul {
+        display: grid;
+        gap: 16px;
+    }
     a {
+        display: block;
+        height: 190px;
         text-decoration: none;
         position: relative;
-        height: 190px;
+        
     }
     img {
         height: 100%;
@@ -277,6 +281,10 @@ h2 {
    
 }
 
+.user-review:not(:first-of-type) {
+    display: none;
+}
+
 .user-review {
     padding: 24px;
     border: 1px solid #00000020;
@@ -290,17 +298,18 @@ h2 {
     div:last-of-type {
         display: flex;
         align-items: center;
+        gap: 5px;
         font-family: "Satoshi-Bold", var(--system-font-stack);
         font-size: 16px;
         img {
             width: 19px;
-            margin-left: 5px;
         }
     }
     p {
         font-family: "Satoshi-Regular", var(--system-font-stack);
         color: var(--font-light);
         line-height: 1.2;
+        font-size: 14px;
     }
 }
 
@@ -639,4 +648,58 @@ footer {
     .item-section button {
         display: none;
     }
+
+    .styles {
+        padding: 76px 64px;
+        h2 {
+            margin-bottom: 64px;
+            font-size: 48px;
+        }
+        ul {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        li:nth-of-type(2) {
+            grid-column: 2 / 4;
+        }
+        li:nth-of-type(3) {
+            grid-column: 1 / 3;
+        }
+        a {
+            height: 290px;
+        }
+    }
+
+    .user-reviews {
+        &>div:first-child {
+            position: relative;
+            margin-bottom: 110px;
+            div {
+                position: absolute;
+                right: 0;
+                top: 80px;
+            }
+        }
+        ul {
+            display: flex;
+            gap: 20px;
+            li.user-review {
+                display: flex;
+            }
+        }
+    }
+
+    .user-review {
+        padding: 28px 32px;
+        gap: 12px;
+        div:last-of-type {
+            font-size: 20px;
+            img {
+                width: 24px;
+            }
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+    
 }
