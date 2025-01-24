@@ -575,4 +575,68 @@ footer {
     }
 
     /* MAIN */
+
+    main {
+        section {
+            margin: 68px 8%;
+        }
+        section:first-of-type {
+            border-bottom: none;
+        } 
+    }
+
+    .item-section:nth-of-type(1) {
+        h2 {
+            font-family: "Alfa Slab One", var(--system-font-stack);
+            font-size: 48px;
+            margin-bottom: 48px;
+        }
+    }
+
+    .items-container {
+        overflow: visible;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 68px;
+        column-gap: 20px;
+        justify-content: center;
+    }
+
+    .item {
+        gap: 8px;
+    }
+
+    .item-img {
+        border-radius: 20px;
+        max-width: none;
+        margin-bottom: 16px;
+    }
+
+    .item-name {
+        font-size: 20px;
+    }
+
+    .item-rating {
+        font-size: 14px;
+    }
+
+    .stars {
+        height: 18px;
+    }
+
+    .item-price {
+        font-size: 24px;
+        span:nth-child(3) {
+            font-size: 12px;
+            padding: 6px 13px;
+        }
+    }
+
+    .item-section:nth-of-type(2) {
+        display: none;
+    }
+
+    .item-section button {
+        display: none;
+    }
 }
