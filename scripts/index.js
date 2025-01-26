@@ -25,6 +25,10 @@ fetchItems();
         e.preventDefault();
         closePrompt.disabled = true;
         prompt.classList.add("deleted");
+        setTimeout(() => {
+            document.querySelector("nav").scrollIntoView({behavior: "smooth"});
+            prompt.remove();
+        }, 1000);
     });
 })();
 
