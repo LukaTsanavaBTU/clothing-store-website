@@ -22,7 +22,7 @@ fetchItems();
     const prompt = document.querySelector(".signup-prompt");
     const closePrompt = prompt.querySelector("button");
     closePrompt.addEventListener("click", (e) => {
-        prompt.remove();
+        prompt.classList.add("deleted");
     });
 })();
 

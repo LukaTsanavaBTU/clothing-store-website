@@ -169,7 +169,7 @@ h2 {
     li {
         overflow: hidden;
         cursor: pointer;
-        transition: scale 0.2s;
+        transition: scale 0.3s;
     }
     li:hover {
         scale: 102%;
@@ -825,4 +825,18 @@ footer {
 
         }    
     } 
+}
+
+.deleted {
+    animation: delete 1s forwards;
+}
+
+@keyframes delete {
+    0% {
+        display: block;
+    }
+    100% {
+        display: none;
+        transform: translateY(-100%);
+    }   
 }
