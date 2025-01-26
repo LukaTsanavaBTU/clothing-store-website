@@ -10,4 +10,3 @@ The main page of a fake clothing store website made for an university assignment
 
 ## Screenshots
 ![desktop screenshot](https://github.com/LukaTsanavaBTU/clothing-store-website/blob/main/screenshots/screenshot-desktop.png?raw=true)
-![mobile screenshot](https://github.com/LukaTsanavaBTU/clothing-store-website/blob/main/screenshots/screenshot-mobile.png?raw=true)
