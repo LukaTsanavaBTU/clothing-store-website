@@ -1,20 +1,53 @@
-fetch("https://fakestoreapi.com/products")
-    .then((response) => response.json())
-    .then((json) => fetchContentHandler(json));
+fetchItems();
 
 
-function fetchContentHandler(json) {
-    const newItems = json.slice(0, 8);
+(()=>{
+    const searchBar = document.querySelector("input[type='search']");
+    const searchButton = document.querySelector(".search>button");
+    searchBar.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            fetchItems(searchBar.value);
+        }
+    });
+    searchButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        fetchItems(searchBar.value);
+    })
+})();
+
+async function fetchItems(query) {
+    const response = await fetch("https://fakestoreapi.com/products");
+    const json = await response.json();
+    if (query) {
+        const filteredJson = json.filter((item) => item.description.toLowerCase().includes(query.toLowerCase())
+                                                || item.title.toLowerCase().includes(query.toLowerCase())
+                                                || item.category.toLowerCase().includes(query.toLowerCase()));
+        populateItems(filteredJson);
+    } else {
+        populateItems(json);
+    }
+}   
+
+function populateItems(json) {
+    const newItems = json.slice(0, json.length >= 8 ? 8 : json.length);
+    const topItems = json.reverse().slice(0, json.length >= 8 ? 8 : json.length);
     const newItemsContainer = document.querySelector(".item-section:first-of-type .items-container");
-    newItems.forEach((item) => {
-        addItemToContainer(item, newItemsContainer);
-    });
-
-    const topItems = json.slice(8, 16);
     const topItemsContainer = document.querySelector(".item-section:nth-of-type(2) .items-container");
-    topItems.forEach((item) => {
-        addItemToContainer(item, topItemsContainer);
-    });
+    newItemsContainer.innerHTML = "";
+    topItemsContainer.innerHTML = "";
+    if (json.length) {
+        newItems.forEach((item) => {
+            addItemToContainer(item, newItemsContainer);
+        });
+        topItems.forEach((item) => {
+            addItemToContainer(item, topItemsContainer);
+        });
+    } else {
+        const noResults = document.createElement("p");
+        noResults.textContent = "No results have been found";
+        newItemsContainer.appendChild(noResults);
+        topItemsContainer.appendChild(noResults.cloneNode(true));
+    }
 }
 
 function addItemToContainer(item, container) {
