@@ -22,6 +22,8 @@ fetchItems();
     const prompt = document.querySelector(".signup-prompt");
     const closePrompt = prompt.querySelector("button");
     closePrompt.addEventListener("click", (e) => {
+        e.preventDefault();
+        closePrompt.disabled = true;
         prompt.classList.add("deleted");
     });
 })();

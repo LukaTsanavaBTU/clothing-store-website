@@ -833,10 +833,10 @@ footer {
 
 @keyframes delete {
     0% {
-        display: block;
-    }
+        visibility: visible;
+    }   
     100% {
-        display: none;
         transform: translateY(-100%);
+        visibility: hidden;
     }   
 }
