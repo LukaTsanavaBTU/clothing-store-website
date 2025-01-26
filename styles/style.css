@@ -557,7 +557,7 @@ footer {
     }
 
     .hero {
-        height: 70vh;
+        height: 700px;
         display: flex;
         gap: 20px;
         align-items: center;
