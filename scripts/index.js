@@ -5,14 +5,17 @@ fetchItems();
     // searchbar logic
     const searchBar = document.querySelector("input[type='search']");
     const searchButton = document.querySelector(".search>button");
+    const newArrivals = document.querySelector("#new-arrivals");
     searchBar.addEventListener("keypress", (e) => {
         if (e.key === "Enter") {
             fetchItems(searchBar.value);
+            newArrivals.scrollIntoView({behavior: "smooth"});
         }
     });
     searchButton.addEventListener("click", (e) => {
         e.preventDefault();
         fetchItems(searchBar.value);
+        newArrivals.scrollIntoView();
     })
 
     // signup prompt closing logic
