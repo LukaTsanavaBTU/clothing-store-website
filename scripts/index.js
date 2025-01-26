@@ -1,7 +1,8 @@
 fetchItems();
 
-
+// used IIFE to avoid polluting global scope
 (()=>{
+    // searchbar logic
     const searchBar = document.querySelector("input[type='search']");
     const searchButton = document.querySelector(".search>button");
     searchBar.addEventListener("keypress", (e) => {
@@ -13,6 +14,13 @@ fetchItems();
         e.preventDefault();
         fetchItems(searchBar.value);
     })
+
+    // signup prompt closing logic
+    const prompt = document.querySelector(".signup-prompt");
+    const closePrompt = prompt.querySelector("button");
+    closePrompt.addEventListener("click", (e) => {
+        prompt.remove();
+    });
 })();
 
 async function fetchItems(query) {
