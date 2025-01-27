@@ -385,6 +385,9 @@ h2 {
         background-position: left 10px top 50%;
         background-repeat: no-repeat;
     }
+    input:focus {
+        outline: 2px solid #ffffff83;
+    }
     button {
         background-color: var(--background-main);
         color: var(--font-dark);
