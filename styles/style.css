@@ -9,6 +9,10 @@
     --background-sale: #ff333310;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* HEADER */
 
